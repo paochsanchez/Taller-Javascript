@@ -1,15 +1,36 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 
 body {
-  font-family: Roboto, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('sajad-nori-vbNTwfO9we0-unsplash.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Roboto, sans-serif;
 }
 
 #chart {
-  max-width: 650px;
-  margin: 35px auto;
+    max-width: 650px;
+    margin: 35px auto;
 }
-.card {
+.row {
+    margin-bottom: 2% !important;
+}
+
+.card{
+    background-color: #ffffff40!important;
+    backdrop-filter: blur(12px);
     box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
-    margin-bottom: 1rem;
+    border-radius: 1px;
+    transition: 0.4s; 
+    color: black;
+}
+
+.card-body{
+
+    background-color: #ffffff49!important;
+
 }
 
