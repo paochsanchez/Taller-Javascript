@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -32,21 +32,33 @@
 
 </head>
 <body>
+  <div class="loader-container">
+    <div class="loader"></div>
+</div>
+  <header class="header sticky-top">
+    <nav class="navbar ">
+      <a class="navbar-brand" href="index.html" style="text-decoration: none;">
+        <img src="css/017-kitty-32.png" width="35" height="35" class="d-inline-block align-top ml-2" alt="">
+        Segundo Proyecto - WEB
+      </a>
+      <div class="text-left mr-2" id="navbar-brand-l">
+      </div>
+    </nav>
+  </header>
   <section class="content">
     <div class="container-fluid">
       <div class="row ">
         <div class="col-lg-6">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">
+              
                 Cumplimiento de Ventas
-              </h3>
-            </div><!-- /.card-header -->
+              
+            </div>
             <div class="card-body">
               <div class="row text-center" id="val_Cumpl">
               </div>
               <div class="tab-content p-0">
-                <!-- Morris chart - Sales -->
                 <div class="chart tab-pane active" id="revenue-chart"
                      style="position: relative; height: 300px;">
                      <canvas id="myChart" ></canvas>
@@ -59,10 +71,10 @@
           <div class="row justify-content-center" >
           <div class="card" id="dough_1">
             <div class="card-header">
-              <h3 class="card-title">
+              
                 Cumplimiento
-              </h3>
-            </div><!-- /.card-header -->
+              
+            </div>
             <div class="card-body">
               <div class="tab-content p-0">
                 <!-- Morris chart - Sales -->
@@ -76,10 +88,10 @@
           <div class="row justify-content-center" >
             <div class="card" id="dough_1-2">
               <div class="card-header">
-                <h3 class="card-title">
+                
                   Pedidos Abiertos
-                </h3>
-              </div><!-- /.card-header -->
+                
+              </div>
               <div class="card-body">
                 <div class="text-center" id="val_Cumpl1">
                 </div>
@@ -90,10 +102,10 @@
           <div class="row justify-content-center">
           <div class="card" id="dough_2" >
             <div class="card-header">
-              <h3 class="card-title">
+              
                 Proyectado
-              </h3>
-            </div><!-- /.card-header -->
+              
+            </div>
             <div class="card-body">
               <div class="tab-content p-0">
                 <!-- Morris chart - Sales -->
@@ -107,10 +119,10 @@
           <div class="row justify-content-center" >
             <div class="card" id="dough_2-2" >
               <div class="card-header">
-                <h3 class="card-title">
+                
                   Cotizaciones Abiertas
-                </h3>
-              </div><!-- /.card-header -->
+                
+              </div>
               <div class="card-body">
                 <div class="text-center" id="val_Cumpl2">
 
@@ -123,10 +135,10 @@
         <div class="col-lg-6">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">
+              
                 Acumulado Anual
-              </h3>
-            </div><!-- /.card-header -->
+              
+            </div>
             <div class="card-body">
               <div class="row text-center" >
                 <div class="col-lg-6" id="row_"></div>
@@ -137,10 +149,10 @@
         </div> <div class="col-lg-6">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">
+              
                 Ventas VS Devoluciones
-              </h3>
-            </div><!-- /.card-header -->
+              
+            </div>
             <div class="card-body">
               <div class="row text-center" >
                 <div class="col-lg-6"  id="fact_"></div>

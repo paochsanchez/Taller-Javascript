@@ -2,7 +2,8 @@
 
 body {
     margin: 0;
-    background: url('peter-bucks-GjEHxcCgFb0-unsplash.jpg') no-repeat center center fixed; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('sajad-nori-vbNTwfO9we0-unsplash.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,9 +11,25 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-.badge{
-    font-size: 16px;
-} 
+#chart {
+    max-width: 650px;
+    margin: 35px auto;
+}
+
+.tls{
+    font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+    border-top: 1px solid #000000e7;
+    width: 25%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+  
+.row, #val_Cumpl {
+    margin-bottom: 2% !important;
+}
 
 .card{
     background-color: #ffffff63!important;
@@ -21,6 +38,17 @@ body {
     border-radius: 1px;
     transition: 0.4s; 
     color: black;
+}
+
+.card-header{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+
+.content{
+    margin-top: 2%;
 }
 
 .navbar{
@@ -70,28 +98,4 @@ a:hover{
     to{
         transform: rotate(360deg);
     }
-}
-
-
-.card-title, th{
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 2%;
-}
-
-th{
-    padding: 1% !important;
-}
-
-#tabla_{
-    margin-top: 5%;
-    min-width: 70%;
-}
-
-tr, select, input{
-    background-color: #ffffff94!important;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
-    border-radius: 1px;
-    transition: 0.4s; 
-    color: black;
 }
