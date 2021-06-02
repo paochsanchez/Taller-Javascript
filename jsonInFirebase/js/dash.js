@@ -43,19 +43,22 @@ function iniciar(data_) {
     let cred = infoR.creditNotes;
 
     let dif = (res(sale, budget)).toLocaleString('en-emodeng');
-    let difY = (budY > 0) ? ((salesY / budY) * 100).toFixed(2) : 0;
-    let proyected = (month > 0) ? (sale * 100 / month) : 0;
-    let percent = (((budget > 0) ? (proyected / budget) : 0) * 100).toFixed(2);
+    let difY = (budY > 0) ? ((salesY / budY) * 100).toFixed(2) : 100;
+    let proyected = (month > 0) ? (sale * 100 / month) : 100;
+    let percent = ((budget > 0) ? (proyected / budget)* 100 : 100).toFixed(2);
     let cumpl = budget > 0 ? (sale / budget) * 100 : 100;
-
+    let money = proyected.toLocaleString('en-emodeng');
+    
     document.getElementById('val_Cumpl').innerHTML = '<div class="col"><div class="tls">Venta Actual</div><hr>₡' + sale.toLocaleString('en-emodeng') + '</div><div class="col"><div class="tls">Meta Actual</div><hr>₡' + budget.toLocaleString('en-emodeng') + '</div><div class="col"><div class="tls">Diferencia</div><hr>' + dif + '</div>';
     document.getElementById("val_Cumpl2").innerHTML = (cot != 0 ? '₡' + (cot).toLocaleString('en-emodeng') : '-');
     document.getElementById("val_Cumpl1").innerHTML = (salesOrd != 0 ? '₡' + (salesOrd).toLocaleString('en-emodeng') : '-');
-    document.getElementById("row_").innerHTML = (salesY != 0 ? '₡' + (salesY).toLocaleString('en-emodeng') : '-');
-    document.getElementById("cump_").innerHTML = difY + '%';
-    document.getElementById("fact_").innerHTML = (fact != 0 ? '₡' + (fact).toLocaleString('en-emodeng') : '-');
-    document.getElementById("dev_").innerHTML = ((res(cred, 0)).toLocaleString('en-emodeng'));
+    document.getElementById("row_").innerHTML = (salesY != 0 ? '₡' + (salesY).toLocaleString('en-emodeng') : '-') + '<hr> <div class="tls">Venta</div>';
+    document.getElementById("cump_").innerHTML = (difY + '%') + '<hr> <div class="tls">Cumplimiento</div>';
+    document.getElementById("fact_").innerHTML = (fact != 0 ? '₡' + (fact).toLocaleString('en-emodeng') : '-') + '<hr> <div class="tls">Facturación</div>';
+    document.getElementById("dev_").innerHTML = ((res(cred, 0)).toLocaleString('en-emodeng')+ '<hr> <div class="tls">Devoluciones</div>');
     document.getElementById("navbar-brand-l").innerHTML = infoR.slpName;
+    document.getElementById('title_p').innerHTML = '<div class="row"><div class="col-6">Proyectado </div> <div class="col-6 text-right b">₡' +money +'  </div></div>';
+    document.getElementById('pdev_').innerHTML = (fact > 0 ? Math.abs(cred/fact * 100 ).toFixed(2) : 0 )+ '<hr> <div class="tls">% Devoluciones</div>';
 
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -156,7 +159,7 @@ function iniciar(data_) {
             tooltips: {
                 enabled: false
             },
-            cutout: '90%'
+            cutout: '80%'
         },
         plugins: [{
             id: 'text',
@@ -166,7 +169,7 @@ function iniciar(data_) {
                     ctx = chart.ctx;
 
                 ctx.restore();
-                var fontSize = (height / 200).toFixed(2);
+                var fontSize = (height / 180).toFixed(2);
                 ctx.font = fontSize + "em sans-serif";
                 ctx.textBaseline = "middle";
 
@@ -198,7 +201,8 @@ function iniciar(data_) {
                 enabled: false
             },
             aspectRatio: 1,
-            cutout: '90%'
+            cutout: '80%'
+            
         },
         plugins: [{
             id: 'text',
@@ -209,7 +213,7 @@ function iniciar(data_) {
                     ctx = chart.ctx;
 
                 ctx.restore();
-                var fontSize = (height / 200).toFixed(2);
+                var fontSize = (height / 180).toFixed(2);
                 ctx.font = fontSize + "em sans-serif";
                 ctx.textBaseline = "middle";
 
@@ -240,7 +244,7 @@ function getData() {
                 calculate(data_);
                 resolve(data_);
             },
-            1000
+            1200
         );
     });
 }
@@ -264,10 +268,15 @@ $(document).ready(function () {
     $("#dough_2-2").css({
         'width': ($("#dough_2").width() + 'px')
     });
+    var heights = $("#title_p1").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $("#title_p").height(maxHeight);
 });
 
 $(window).on("load", function () {
-    $(".loader-container").fadeOut(1000);
+    $(".loader-container").fadeOut(1400);
 });
 
 

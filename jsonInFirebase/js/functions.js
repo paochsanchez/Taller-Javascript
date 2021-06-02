@@ -56,7 +56,7 @@ function getData() {
             resolve (snap.val());
           });
         },
-        1500
+        1400
     );
   });
 }
@@ -79,7 +79,7 @@ $(document).ready(function(){
   startTable();
 });
 $(window).on("load",function(){
-  $(".loader-container").fadeOut(1000);
+  $(".loader-container").fadeOut(1500);
 });
 
 

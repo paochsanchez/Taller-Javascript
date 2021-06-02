@@ -41,7 +41,6 @@ hr {
 }
 
 .card-header{
-    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
 }
@@ -65,6 +64,11 @@ hr {
     color: black;
 }
 
+.b{
+    font-size: 15px;
+    color: black;
+}
+
 a:hover{
     color: white;
 }
@@ -74,7 +78,8 @@ a:hover{
     height: 100vh;
     background-color: #ffffff!important;
     backdrop-filter: blur(12px);
-    position: fixed;
+    position:absolute;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
